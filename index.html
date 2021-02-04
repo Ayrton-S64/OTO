@@ -31,10 +31,10 @@
       </ul>
     </div>
   </nav>
-  <div class="container-fluid">
-    <div class="row vh-100">
+  <div class="container-fluid main px-5 py-4">
+    <div class="row h-100">
       <div class="col-5">
-        <form action="">
+        <form action="" class="p-4 border rounded-lg">
           <div class="form-group">
             <label for="#txtNombreTarea">Nombre de la tarea:</label>
             <input type="text" class="form-control" name="nombreTarea" id="txtNombreTarea" placeholder="Tarea pendiente...">
@@ -71,125 +71,127 @@
           <button type="submit" class="btn btn-dark btn-block">Agregar tarea</button>
         </form>
       </div>
-      <div class="col-7 accordion overflow-auto rounded taskcontainer" id="taskManager">
-        <div class="vieweritem">
-          <div class="taskhead">
-            <div class="taskhead__first">
-              <a data-toggle="collapse" href="#taskDescription1" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
-              <p class="taskhead__name">Examen EDOO</p>
+      <div class="col-7 accordion overflow-auto" id="taskManager">
+        <div class=" taskcontainer h-100">
+          <div class="vieweritem">
+            <div class="taskhead">
+              <div class="taskhead__first">
+                <a data-toggle="collapse" href="#taskDescription1" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+                <p class="taskhead__name">Examen EDOO</p>
+              </div>
+              <div class="taskhead__icons">
+                <i class="bi bi-app"></i>
+                <i class="bi bi-trash-fill"></i>
+              </div>
             </div>
-            <div class="taskhead__icons">
-              <i class="bi bi-app"></i>
-              <i class="bi bi-trash-fill"></i>
-            </div>
-          </div>
-          <div class="taskbody collapse" id="taskDescription1" data-parent="#taskManager">
-            <p>URGENTE</p>
-            <div>
-              <p>Estudiar para poder realizar el examen de EDOO</p>
-            </div>
-            <p>Fecha programada: <span>5/2/2021</span></p>
-            <p>De <span>16:00</span> a <span>19:00</span></p>
-          </div>
-        </div>
-        <div class="vieweritem">
-          <div class="taskhead">
-            <div class="taskhead__first">
-              <a data-toggle="collapse" href="#taskDescription2" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
-              <p class="taskhead__name">Examen EDOO</p>
-            </div>
-            <div class="taskhead__icons">
-              <i class="bi bi-app"></i>
-              <i class="bi bi-trash-fill"></i>
+            <div class="taskbody collapse" id="taskDescription1" data-parent="#taskManager">
+              <p>URGENTE</p>
+              <div>
+                <p>Estudiar para poder realizar el examen de EDOO</p>
+              </div>
+              <p>Fecha programada: <span>5/2/2021</span></p>
+              <p>De <span>16:00</span> a <span>19:00</span></p>
             </div>
           </div>
-          <div class="taskbody collapse" id="taskDescription2" data-parent="#taskManager">
-            <p>URGENTE</p>
-            <div>
-              <p>Estudiar para poder realizar el examen de EDOO</p>
+          <div class="vieweritem">
+            <div class="taskhead">
+              <div class="taskhead__first">
+                <a data-toggle="collapse" href="#taskDescription2" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+                <p class="taskhead__name">Examen EDOO</p>
+              </div>
+              <div class="taskhead__icons">
+                <i class="bi bi-app"></i>
+                <i class="bi bi-trash-fill"></i>
+              </div>
             </div>
-            <p>Fecha programada: <span>5/2/2021</span></p>
-            <p>De <span>16:00</span> a <span>19:00</span></p>
-          </div>
-        </div>
-        <div class="vieweritem">
-          <div class="taskhead">
-            <div class="taskhead__first">
-              <a data-toggle="collapse" href="#taskDescription3" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
-              <p class="taskhead__name">Examen EDOO</p>
-            </div>
-            <div class="taskhead__icons">
-              <i class="bi bi-app"></i>
-              <i class="bi bi-trash-fill"></i>
-            </div>
-          </div>
-          <div class="taskbody collapse" id="taskDescription3" data-parent="#taskManager">
-            <p>URGENTE</p>
-            <div>
-              <p>Estudiar para poder realizar el examen de EDOO</p>
-            </div>
-            <p>Fecha programada: <span>5/2/2021</span></p>
-            <p>De <span>16:00</span> a <span>19:00</span></p>
-          </div>
-        </div>
-        <div class="vieweritem">
-          <div class="taskhead">
-            <div class="taskhead__first">
-              <a data-toggle="collapse" href="#taskDescription4" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
-              <p class="taskhead__name">Examen EDOO</p>
-            </div>
-            <div class="taskhead__icons">
-              <i class="bi bi-app"></i>
-              <i class="bi bi-trash-fill"></i>
+            <div class="taskbody collapse" id="taskDescription2" data-parent="#taskManager">
+              <p>URGENTE</p>
+              <div>
+                <p>Estudiar para poder realizar el examen de EDOO</p>
+              </div>
+              <p>Fecha programada: <span>5/2/2021</span></p>
+              <p>De <span>16:00</span> a <span>19:00</span></p>
             </div>
           </div>
-          <div class="taskbody collapse" id="taskDescription4" data-parent="#taskManager">
-            <p>URGENTE</p>
-            <div>
-              <p>Estudiar para poder realizar el examen de EDOO</p>
+          <div class="vieweritem">
+            <div class="taskhead">
+              <div class="taskhead__first">
+                <a data-toggle="collapse" href="#taskDescription3" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+                <p class="taskhead__name">Examen EDOO</p>
+              </div>
+              <div class="taskhead__icons">
+                <i class="bi bi-app"></i>
+                <i class="bi bi-trash-fill"></i>
+              </div>
             </div>
-            <p>Fecha programada: <span>5/2/2021</span></p>
-            <p>De <span>16:00</span> a <span>19:00</span></p>
-          </div>
-        </div>
-        <div class="vieweritem">
-          <div class="taskhead">
-            <div class="taskhead__first">
-              <a data-toggle="collapse" href="#taskDescription5" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
-              <p class="taskhead__name">Examen EDOO</p>
-            </div>
-            <div class="taskhead__icons">
-              <i class="bi bi-app"></i>
-              <i class="bi bi-trash-fill"></i>
-            </div>
-          </div>
-          <div class="taskbody collapse" id="taskDescription5" data-parent="#taskManager">
-            <p>URGENTE</p>
-            <div>
-              <p>Estudiar para poder realizar el examen de EDOO</p>
-            </div>
-            <p>Fecha programada: <span>5/2/2021</span></p>
-            <p>De <span>16:00</span> a <span>19:00</span></p>
-          </div>
-        </div>
-        <div class="vieweritem">
-          <div class="taskhead">
-            <div class="taskhead__first">
-              <a data-toggle="collapse" href="#taskDescription6" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
-              <p class="taskhead__name">Examen EDOO</p>
-            </div>
-            <div class="taskhead__icons">
-              <i class="bi bi-app"></i>
-              <i class="bi bi-trash-fill"></i>
+            <div class="taskbody collapse" id="taskDescription3" data-parent="#taskManager">
+              <p>URGENTE</p>
+              <div>
+                <p>Estudiar para poder realizar el examen de EDOO</p>
+              </div>
+              <p>Fecha programada: <span>5/2/2021</span></p>
+              <p>De <span>16:00</span> a <span>19:00</span></p>
             </div>
           </div>
-          <div class="taskbody collapse" id="taskDescription6" data-parent="#taskManager">
-            <p>URGENTE</p>
-            <div>
-              <p>Estudiar para poder realizar el examen de EDOO</p>
+          <div class="vieweritem">
+            <div class="taskhead">
+              <div class="taskhead__first">
+                <a data-toggle="collapse" href="#taskDescription4" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+                <p class="taskhead__name">Examen EDOO</p>
+              </div>
+              <div class="taskhead__icons">
+                <i class="bi bi-app"></i>
+                <i class="bi bi-trash-fill"></i>
+              </div>
             </div>
-            <p>Fecha programada: <span>5/2/2021</span></p>
-            <p>De <span>16:00</span> a <span>19:00</span></p>
+            <div class="taskbody collapse" id="taskDescription4" data-parent="#taskManager">
+              <p>URGENTE</p>
+              <div>
+                <p>Estudiar para poder realizar el examen de EDOO</p>
+              </div>
+              <p>Fecha programada: <span>5/2/2021</span></p>
+              <p>De <span>16:00</span> a <span>19:00</span></p>
+            </div>
+          </div>
+          <div class="vieweritem">
+            <div class="taskhead">
+              <div class="taskhead__first">
+                <a data-toggle="collapse" href="#taskDescription5" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+                <p class="taskhead__name">Examen EDOO</p>
+              </div>
+              <div class="taskhead__icons">
+                <i class="bi bi-app"></i>
+                <i class="bi bi-trash-fill"></i>
+              </div>
+            </div>
+            <div class="taskbody collapse" id="taskDescription5" data-parent="#taskManager">
+              <p>URGENTE</p>
+              <div>
+                <p>Estudiar para poder realizar el examen de EDOO</p>
+              </div>
+              <p>Fecha programada: <span>5/2/2021</span></p>
+              <p>De <span>16:00</span> a <span>19:00</span></p>
+            </div>
+          </div>
+          <div class="vieweritem">
+            <div class="taskhead">
+              <div class="taskhead__first">
+                <a data-toggle="collapse" href="#taskDescription6" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+                <p class="taskhead__name">Examen EDOO</p>
+              </div>
+              <div class="taskhead__icons">
+                <i class="bi bi-app"></i>
+                <i class="bi bi-trash-fill"></i>
+              </div>
+            </div>
+            <div class="taskbody collapse" id="taskDescription6" data-parent="#taskManager">
+              <p>URGENTE</p>
+              <div>
+                <p>Estudiar para poder realizar el examen de EDOO</p>
+              </div>
+              <p>Fecha programada: <span>5/2/2021</span></p>
+              <p>De <span>16:00</span> a <span>19:00</span></p>
+            </div>
           </div>
         </div>
       </div>

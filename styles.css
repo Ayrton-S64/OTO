@@ -1,10 +1,17 @@
-.vieweritem{
-  border: 2px solid black;
+.main{
+  height: calc(100vh - 56px);
 }
 
 .taskcontainer{
+  border: 2px solid black;
+  border-radius: 20px 20px 20px 20px;
   overflow: hidden;
 }
+
+.vieweritem{
+  border-bottom: 2px solid black;
+}
+
 
 .taskhead{
   display: flex;
