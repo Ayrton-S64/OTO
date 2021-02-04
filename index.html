@@ -32,11 +32,46 @@
     </div>
   </nav>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row vh-100">
       <div class="col-5">
-
+        <form action="">
+          <div class="form-group">
+            <label for="#txtNombreTarea">Nombre de la tarea:</label>
+            <input type="text" class="form-control" name="nombreTarea" id="txtNombreTarea" placeholder="Tarea pendiente...">
+          </div>
+          <div class="form-inline justify-content-between">
+            <label for="" >Fecha finalizacion: </label>
+            <input type="date" name="fechaFin" id="dtFechaFin" class="form-control" placeholder="3/2/2021" aria-describedby="helpId">
+          </div>
+          <div class="form-group row">
+            <div class="col-6">
+              <label for="">Hora inicio:</label>
+            <input type="time"
+              class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+            <small id="helpId" class="form-tedxt text-muted">Formato 24H</small>
+            </div>
+            <div class="col-6">
+              <label for="">Hora fin:</label>
+            <input type="time"
+              class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+            <small id="helpId" class="form-text text-muted">Formato 24H</small>
+            </div>
+          </div>
+          <div class="form-group">
+            <select class="custom-select" name="" id="">
+              <option selected>Categorias...</option>
+              <option value="1">Urgente</option>
+              <option value="2">Importante</option>
+              <option value="3">Universidad</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Descripcion de tarea..." name="" id="" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark btn-block">Agregar tarea</button>
+        </form>
       </div>
-      <div class="col-7 overflow-auto">
+      <div class="col-7 accordion overflow-auto rounded taskcontainer" id="taskManager">
         <div class="vieweritem">
           <div class="taskhead">
             <div class="taskhead__first">
@@ -48,7 +83,7 @@
               <i class="bi bi-trash-fill"></i>
             </div>
           </div>
-          <div class="taskbody collapse" id="taskDescription1">
+          <div class="taskbody collapse" id="taskDescription1" data-parent="#taskManager">
             <p>URGENTE</p>
             <div>
               <p>Estudiar para poder realizar el examen de EDOO</p>
@@ -68,7 +103,7 @@
               <i class="bi bi-trash-fill"></i>
             </div>
           </div>
-          <div class="taskbody collapse" id="taskDescription2">
+          <div class="taskbody collapse" id="taskDescription2" data-parent="#taskManager">
             <p>URGENTE</p>
             <div>
               <p>Estudiar para poder realizar el examen de EDOO</p>
@@ -88,7 +123,7 @@
               <i class="bi bi-trash-fill"></i>
             </div>
           </div>
-          <div class="taskbody collapse" id="taskDescription3">
+          <div class="taskbody collapse" id="taskDescription3" data-parent="#taskManager">
             <p>URGENTE</p>
             <div>
               <p>Estudiar para poder realizar el examen de EDOO</p>
@@ -108,7 +143,47 @@
               <i class="bi bi-trash-fill"></i>
             </div>
           </div>
-          <div class="taskbody collapse" id="taskDescription4">
+          <div class="taskbody collapse" id="taskDescription4" data-parent="#taskManager">
+            <p>URGENTE</p>
+            <div>
+              <p>Estudiar para poder realizar el examen de EDOO</p>
+            </div>
+            <p>Fecha programada: <span>5/2/2021</span></p>
+            <p>De <span>16:00</span> a <span>19:00</span></p>
+          </div>
+        </div>
+        <div class="vieweritem">
+          <div class="taskhead">
+            <div class="taskhead__first">
+              <a data-toggle="collapse" href="#taskDescription5" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+              <p class="taskhead__name">Examen EDOO</p>
+            </div>
+            <div class="taskhead__icons">
+              <i class="bi bi-app"></i>
+              <i class="bi bi-trash-fill"></i>
+            </div>
+          </div>
+          <div class="taskbody collapse" id="taskDescription5" data-parent="#taskManager">
+            <p>URGENTE</p>
+            <div>
+              <p>Estudiar para poder realizar el examen de EDOO</p>
+            </div>
+            <p>Fecha programada: <span>5/2/2021</span></p>
+            <p>De <span>16:00</span> a <span>19:00</span></p>
+          </div>
+        </div>
+        <div class="vieweritem">
+          <div class="taskhead">
+            <div class="taskhead__first">
+              <a data-toggle="collapse" href="#taskDescription6" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+              <p class="taskhead__name">Examen EDOO</p>
+            </div>
+            <div class="taskhead__icons">
+              <i class="bi bi-app"></i>
+              <i class="bi bi-trash-fill"></i>
+            </div>
+          </div>
+          <div class="taskbody collapse" id="taskDescription6" data-parent="#taskManager">
             <p>URGENTE</p>
             <div>
               <p>Estudiar para poder realizar el examen de EDOO</p>
