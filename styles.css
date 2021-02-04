@@ -1,0 +1,32 @@
+.vieweritem{
+  border: 2px solid black;
+}
+
+.taskhead{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 6px;
+  align-items: center;
+}
+
+.taskhead__name{
+  margin: 0px;
+  font-weight: bold;
+}
+
+.taskhead__first{
+  display: flex;
+}
+
+.taskhead__first > i{
+  padding-right: 8px;
+}
+
+.taskhead__icons > i{
+  padding: 0px 6px;
+}
+
+.taskbody{
+  border-top: 1px solid #ACACAC;
+  padding: 4px 12px;
+}
