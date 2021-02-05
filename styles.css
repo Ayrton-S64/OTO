@@ -2,6 +2,17 @@
   height: calc(100vh - 56px);
 }
 
+.taskinfo{
+  height: 100%;  
+}
+
+.taskinfo__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
 .taskcontainer{
   border: 2px solid black;
   border-radius: 20px 20px 20px 20px;
@@ -11,7 +22,6 @@
 .vieweritem{
   border-bottom: 2px solid black;
 }
-
 
 .taskhead{
   display: flex;
@@ -31,13 +41,19 @@
 
 .taskhead__first > i{
   padding-right: 8px;
+  cursor: pointer;
 }
 
 .taskhead__icons > i{
-  padding: 0px 6px;
+  margin: 0px 6px;
+  cursor: pointer;
 }
 
 .taskbody{
   border-top: 1px solid #ACACAC;
   padding: 4px 12px;
+}
+
+.ieliminar:hover{
+  color: red;
 }
