@@ -1,3 +1,4 @@
+var testElement;
 //modals
 mdlOclusion = document.getElementsByClassName('oclusioner');
 
@@ -27,22 +28,26 @@ icons1 =  document.getElementsByClassName('bi-chevron-compact-right');
 
 
 //eventos
+$('#taskManager').on('show.bs.collapse', (e)=>{
+  e.target.parentElement.firstElementChild.firstElementChild.firstElementChild.firstElementChild.classList.replace('bi-chevron-compact-right', 'bi-chevron-compact-down');
+});
+$('#taskManager').on('hide.bs.collapse', (e)=>{
+  e.target.parentElement.firstElementChild.firstElementChild.firstElementChild.firstElementChild.classList.replace('bi-chevron-compact-down', 'bi-chevron-compact-right');
+});
+$(document).on('click', '.ieliminar',function(e){
+  console.log(e);
+  deletedElement = e.target;
+  while (!deletedElement.classList.contains('vieweritem')){
+    deletedElement = deletedElement.parentElement;
+  }
+  testElement = deletedElement;
+  eliminarTarea(deletedElement);
+});
+
+
 btnCerrarAlerta.addEventListener('click', cerrarAlerta);
 
 cboCategoria.addEventListener('change', changeCbo);
-
-for (const chevron of icons1) {
-  chevron.addEventListener('click', function(e){
-    let iconsClasses = ["bi-chevron-compact-right","bi-chevron-compact-down"]
-    if(e.target.classList[1] == iconsClasses[0]){
-      e.target.classList.replace(iconsClasses[0],iconsClasses[1]);
-    }
-    else if(e.target.classList[1] == iconsClasses[1]){
-      e.target.classList.replace(iconsClasses[1],iconsClasses[0]);
-    }
-    console.log("Funciona!!!!")
-  });
-}
 
 //funciones
 function agregarTarea(){
@@ -50,11 +55,10 @@ function agregarTarea(){
   nombre = txtnombreTarea.value;
   tf = dtFechaFin.value.split('-');
   fecha = `${tf[2]}/${tf[1]}/${tf[0]}`;
-  tiempoInicio = timeInicio.value.toString();
-  tiempoFin = timeFin.value.toString();
+  tiempoInicio = timeInicio.value;
+  tiempoFin = timeFin.value;
   categoria = cboCategoria.selectedOptions[0].innerText;
   descripcion = procesarValueTextArea(tAreaDescripcion.value);
-  
   // verficaciones;
 
 
@@ -63,6 +67,15 @@ function agregarTarea(){
     tareasForm.reset();  
   }
 }
+
+async function eliminarTarea(tareaItem){
+  response = await lanzarAlerta("seguro que quieres eliminar esta tarea!",1,tareaItem);
+  console.log("respuesta");
+  console.log(response)
+  if(response){
+    tareaItem.remove();
+  }
+} 
 
 function createJSON(nombre, fecha, tInicio, tFin, categoria, descripcion){
   obj = {
@@ -87,7 +100,7 @@ function crearComponente(tarea){
   <div class="vieweritem">
             <div class="taskhead">
               <div class="taskhead__first">
-                <a data-toggle="collapse" href="#taskDescription${nElem+1}" role="button" aria-expanded="false" aria-controls="taskbody"><i class="bi bi-chevron-compact-right"></i></a>
+                <a data-toggle="collapse" href="#taskDescription${nElem+1}" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
                 <p class="taskhead__name">${tarea.nombreTarea}</p>
               </div>
               <div class="taskhead__icons">
@@ -108,9 +121,7 @@ function crearComponente(tarea){
 }
 
 function verificarCbo(cboElement){
-  console.log(cboElement.selectedIndex)
   if(cboElement.selectedIndex==0){
-      console.log("Cuidado!!!")
       cboElement.classList.add('bordeRojo');
       document.getElementById('advCbo').classList.remove('oculto');
       return 0
@@ -120,26 +131,21 @@ function verificarCbo(cboElement){
 }
 
 function verificarText(inputTextElement){
-  console.log(inputTextElement);
   if(inputTextElement.value!=""){
     if(inputTextElement.classList.contains('bordeRojo')){
       inputTextElement.classList.remove('bordeRojo');
     }
-    console.log("valido");
     return 1;
   }else{
     inputTextElement.classList.add('bordeRojo');
-    console.log("invalido");
     return 0;
   }
 }
 
 function changeCbo(e){
   let htmlE = e.target;
-  console.log(htmlE);
   if(htmlE.selectedIndex!=0){
     if(htmlE.classList.contains('bordeRojo')){
-      console.log(e.target)
       htmlE.classList.remove('bordeRojo');
       if (!document.getElementById('advCbo').classList.contains('oculto'))
       {document.getElementById('advCbo').classList.add('oculto');}
@@ -147,7 +153,25 @@ function changeCbo(e){
   }
 }
 
-function lanzarAlerta(){
+function lanzarAlerta(mensaje, tipo, objeto){
+  switch(tipo){
+    default:
+      msgAlerta.innerText = mensaje;
+      mdlOclusion[0].classList.remove('oculto');
+      return new Promise((resolve,reject)=>{
+        $(".buttonAlert").click(function (e) { 
+          e.preventDefault();
+          console.log(e);
+          if(parseInt(e.target.dataset.option)){
+            resolve(true);
+          }else{resolve(false)}
+          cerrarAlerta();
+        });
+      });
+  }
+}
+
+function operacionAlerta(tipo,operacion,callback){
 
 }
 
@@ -161,11 +185,11 @@ function procesarValueTextArea(jsText){
       htmlText+= lineas[i];
     }
   }
+  return htmlText;
 }
 
 function cerrarAlerta(e){
-  console.log("Funciona");
-  console.log(e);
+  console.log('cerrando...');
   for (const oclusioner of mdlOclusion) {
     if (!oclusioner.classList.contains('oculto')){
       oclusioner.classList.add('oculto')
