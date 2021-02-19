@@ -200,7 +200,7 @@
       </div>
     </div>
   </div>
-  <div class="oclusioner">
+  <div class="oclusioner oculto">
     <div class="alertModal">
       <button class="btn btn-danger" id="btnCloseAlert">X</button>
       <div class="alertBox">
