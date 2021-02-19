@@ -38,38 +38,39 @@
           <div class="taskinfo__form">
             <div class="form-group">
               <label for="#txtNombreTarea">Nombre de la tarea:</label>
-              <input type="text" class="form-control" name="nombreTarea" id="txtNombreTarea" placeholder="Tarea pendiente...">
+              <input required type="text" class="form-control" name="nombreTarea" id="txtNombreTarea" placeholder="Tarea pendiente...">
             </div>
             <div class="form-inline justify-content-between">
               <label for="" >Fecha finalizacion: </label>
-              <input type="date" name="fechaFin" id="dtFechaFin" class="form-control" placeholder="3/2/2021" aria-describedby="helpId">
+              <input required type="date" name="fechaFin" id="dtFechaFin" class="form-control" placeholder="3/2/2021" aria-describedby="helpId">
             </div>
             <div class="form-group row">
               <div class="col-6">
                 <label for="">Hora inicio:</label>
-              <input type="time"
+              <input required type="time"
                 class="form-control" name="horaInicio" id="timeInicio" aria-describedby="helpId" placeholder="">
               <small id="helpId" class="form-tedxt text-muted">Formato 24H</small>
               </div>
               <div class="col-6">
                 <label for="">Hora fin:</label>
-              <input type="time"
+              <input required type="time"
                 class="form-control" name="horaFin" id="timeFin" aria-describedby="helpId" placeholder="">
               <small id="helpId" class="form-text text-muted">Formato 24H</small>
               </div>
             </div>
             <div class="form-group">
-              <select class="custom-select" name="categoriaTarea" id="cboCategoria">
+              <select required class="custom-select" name="categoriaTarea" id="cboCategoria">
                 <option selected>Categorias...</option>
                 <option value="1">Urgente</option>
                 <option value="2">Importante</option>
                 <option value="3">Universidad</option>
               </select>
+              <small id="advCbo" style="color: red;" class="oculto">Porfavor seleccione una categoria</small>
             </div>
             <div class="form-group">
               <textarea class="form-control" placeholder="Descripcion de tarea..." name="descripcionTarea" id="taDescripcion" rows="5"></textarea>
             </div>
-            <button type="submit" class="btn btn-dark btn-block">Agregar tarea</button>
+            <input type="button" onclick="agregarTarea()" class="btn btn-dark btn-block" value="Agregar tarea"></input>
           </div>
         </form>
       </div>
@@ -196,6 +197,15 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="oclusioner">
+    <div class="alertModal">
+      <button class="btn btn-danger" id="btnCloseAlert">X</button>
+      <div class="alertBox">
+        <h1>Atención</h1>
+        <p id="mensajeAlerta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, necessitatibus eos sed molestiae atque nemo facilis esse, ratione beatae at veritatis sequi quibusdam obcaecati ipsum inventore placeat, harum aperiam. Laudantium.</p>
       </div>
     </div>
   </div>
