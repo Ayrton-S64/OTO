@@ -98,25 +98,25 @@ function crearComponente(tarea){
   let nElem = eHTML.childElementCount;
   eHTML.innerHTML += `
   <div class="vieweritem">
-            <div class="taskhead">
-              <div class="taskhead__first">
-                <a data-toggle="collapse" href="#taskDescription${nElem+1}" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
-                <p class="taskhead__name">${tarea.nombreTarea}</p>
-              </div>
-              <div class="taskhead__icons">
-                <i class="bi bi-app"></i>
-                <i class="ieliminar bi bi-trash-fill"></i>
-              </div>
-            </div>
-            <div class="taskbody collapse" id="taskDescription${nElem+1}" data-parent="#taskManager">
-              <p>${tarea.categoria}</p>
-              <div>
-                <p>${tarea.descripcion}</p>
-              </div>
-              <p>Fecha programada: <span>${tarea.fechaFin}</span></p>
-              <p>De <span>${tarea.tiempoInicio}</span> a <span>${tarea.tiempoFin}</span></p>
-            </div>
-          </div>
+    <div class="taskhead">
+      <div class="taskhead__first">
+        <a data-toggle="collapse" href="#taskDescription${nElem+1}" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
+        <p class="taskhead__name">${tarea.nombreTarea}</p>
+      </div>
+      <div class="taskhead__icons">
+        <i class="bi bi-app"></i>
+        <i class="ieliminar bi bi-trash-fill"></i>
+      </div>
+    </div>
+    <div class="taskbody collapse" id="taskDescription${nElem+1}" data-parent="#taskManager">
+      <p>${tarea.categoria}</p>
+      <div>
+        <p>${tarea.descripcion}</p>
+      </div>
+      <p>Fecha programada: <span>${tarea.fechaFin}</span></p>
+      <p>De <span>${tarea.tiempoInicio}</span> a <span>${tarea.tiempoFin}</span></p>
+    </div>
+  </div>
   `
 }
 
