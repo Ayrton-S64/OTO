@@ -10,7 +10,7 @@
   echo "Connected to the DB\n";
 
   echo "<table>";
-  while($fila = pg_fetch_array($result)){
+  while($fila = pg_fetch_row($result)){
     echo "<tr>";
     foreach($fila as $col){
       echo '<td>'.$col.'</td>';
