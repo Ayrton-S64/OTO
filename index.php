@@ -96,7 +96,7 @@
                 $html .= '<div class="vieweritem">
                 <div class="taskhead">
                   <div class="taskhead__first">
-                    <a data-toggle="collapse" href="#taskDescription'.($totalTareas + 1).'" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
+                    <a data-toggle="collapse" href="#taskDescription'.$fila['id_tarea'].'" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
                     <p class="taskhead__name">'.$fila['nombre_tarea'].'</p>
                   </div>
                   <div class="taskhead__icons">
@@ -104,7 +104,7 @@
                     <i class="ieliminar bi bi-trash-fill"></i>
                   </div>
                 </div>
-                <div class="taskbody collapse" id="taskDescription'.($totalTareas + 1).'" data-parent="#taskManager">
+                <div class="taskbody collapse" id="taskDescription'.$fila['id_tarea'].'" data-parent="#taskManager">
                   <p>En proceso...</p>
                   <div>
                     <p>'.$fila['descripcion'].'</p>

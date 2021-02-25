@@ -84,7 +84,7 @@ function agregarTarea(){
 					'<button class="close" data-dismiss="alert">&times;</button>'+
 					objeto.mensaje +
 					'</div>';
-          crearComponente(createJSON(nombre,fecha,tiempoInicio,tiempoFin,categoria,descripcion));
+          crearComponente(createJSON(nombre,fecha,tiempoInicio,tiempoFin,categoria,descripcion,objeto.total));
         }else if(objeto.success==0){
           var tmpl = '<div class="alert alert-danger alert-dismissable">'+
 					'<button class="close" data-dismiss="alert">&times;</button>'+
@@ -151,7 +151,7 @@ async function eliminarTarea(tareaItem){
   }
 } 
 
-function createJSON(nombre, fecha, tInicio, tFin, categoria, descripcion){
+function createJSON(nombre, fecha, tInicio, tFin, categoria, descripcion,idTarea){
   tf = fecha.split('-');
   obj = {
     "nombreTarea": nombre,
@@ -159,7 +159,8 @@ function createJSON(nombre, fecha, tInicio, tFin, categoria, descripcion){
     "tiempoInicio" : tInicio,
     "tiempoFin" : tFin,
     "categoria" : categoria,
-    "descripcion" : descripcion
+    "descripcion" : descripcion,
+    "idTarea": idTarea
   }
 
   console.log(obj);
@@ -175,7 +176,7 @@ function crearComponente(tarea){
   <div class="vieweritem">
     <div class="taskhead">
       <div class="taskhead__first">
-        <a data-toggle="collapse" href="#taskDescription${nElem+1}" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
+        <a data-toggle="collapse" href="#taskDescription${tarea.idTarea + 1}" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
         <p class="taskhead__name">${tarea.nombreTarea}</p>
       </div>
       <div class="taskhead__icons">
@@ -183,7 +184,7 @@ function crearComponente(tarea){
         <i class="ieliminar bi bi-trash-fill"></i>
       </div>
     </div>
-    <div class="taskbody collapse" id="taskDescription${nElem+1}" data-parent="#taskManager">
+    <div class="taskbody collapse" id="taskDescription${tarea.idTarea + 1}" data-parent="#taskManager">
       <p>${tarea.categoria}</p>
       <div>
         <p>${tarea.descripcion}</p>
