@@ -25,7 +25,7 @@
       $user = $this->param['param_usuario'];
       $clave = $this->param['param_clave'];
 
-      $result = pg_query('SELECT * FROM USUARIOS WHERE nombre_usuario='.$user.';');
+      $result = pg_query('SELECT * FROM USUARIOS WHERE nombre_usuario="'.$user.'"s;');
       if(pg_num_rows($result)==1){
         $fila = pg_fetch_array($result);
         if($fila['clave']==$clave){
@@ -49,7 +49,7 @@
 
       session_start();
       $con = conectar();
-      $consulta = pg_query('SELECT * FROM USUARIOS WHERE nombre_usuario='.$user.';');
+      $consulta = pg_query('SELECT * FROM USUARIOS WHERE nombre_usuario="'.$user.'";');
       if(pg_num_rows($consulta)==0){
         $result = pg_query('INSERT INTO USUARIOS(nombre_usuario, clave, telefono, correo) VALUES ('.$user.', '.$clave.', '.$celular.', '.$correo.');');
         if(!$result){
@@ -64,6 +64,7 @@
       }else{
         $resp = array('success'=>0,'mensaje'=>'Este usuario ya existe');
       }
+      pg_close($con); 
       return json_encode($resp);
     }
   }
