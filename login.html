@@ -13,7 +13,7 @@
         <div class="ms-motion-scaleDownIn centrado" align="center">
             <!--label class="ms-fontSize-20">Iniciar Sesión</label> <br> <br-->
             <br> <img src="img/logo.png" alt="logo" width="200px"> <br> <br>
-            <form id="loginForm" onsubmit="logearUsuario(); return false">
+            <form id="loginForm" method="POST" action="./modelUsuario.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Contact" aria-hidden="true"></i></span>
                     <input id="txtUsuario" type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" required>
@@ -22,7 +22,7 @@
                     <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Permissions" aria-hidden="true"></i></span>
                     <input type="password" id="txtClave" class="form-control" placeholder="Clave" aria-label="Clave" aria-describedby="basic-addon1" required>
                 </div>
-                <button onclick="logearUsuario()" type="button" class="btn btn-outline-secondary" style="width: 100%;">Ingresar</button>
+                <button onclick="logearUsuario()" type="submit" class="btn btn-outline-secondary" style="width: 100%;">Ingresar</button>
             </form> <br>
             <p class="ms-fontSize-14">¿No tienes cuenta? <a href="registro.html">Crear una cuenta.</a></p>
         </div>
