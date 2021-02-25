@@ -45,8 +45,8 @@
       $con = conectar();
       $user = $this->param['param_usuario'];
       $clave = $this->param['param_clave'];
-
-      $result = pg_query("SELECT * FROM USUARIOS WHERE nombre_usuario='".$user."';");
+      $query = "SELECT * FROM USUARIOS WHERE nombre_usuario='".$user."';";
+      $result = pg_query($query);
       if(pg_num_rows($result)==1){
         $fila = pg_fetch_array($result);
         if($fila['clave']==$clave){
