@@ -77,7 +77,7 @@ function agregarTarea(){
             "&horaInicio="+tiempoInicio+
             "&duracion="+txtDuracion+
             "&descripcion="+descripcion,
-      success: function (response) {
+      success: function (data) {
         objeto = JSON.parse(data);
         if(objeto.success==1){
           var tmpl = '<div class="alert alert-success alert-dismissable">'+
@@ -120,7 +120,7 @@ async function eliminarTarea(tareaItem){
       type: "POST",
       url: "./borrarTarea.php",
       data: "tareaID="+parseInt(tareaItem.id),
-      success: function (response) {
+      success: function (data) {
         objeto = JSON.parse(data);
         if(objeto.success==1){
           var tmpl = '<div class="alert alert-success alert-dismissable">'+
