@@ -1,5 +1,5 @@
 <?php
-  echo "Hola mundo\n";
+  echo "Hola mundo \n";
   session_start();
   echo "Conectando";
   $con = conectar();
@@ -14,11 +14,11 @@
     if($fila['clave']==$clave){
       $_SESSION['user_id']=$fila['id_usuario'];
       $_SESSION['user']=$fila['nombre_usuario'];
-      echo "Exito"
+      echo "Exito";
     } else {
       echo "Contraseña incorrecta"
     }
   }else{
-    echo "No hay dato"
+    echo "No hay dato";
   }
 ?>
