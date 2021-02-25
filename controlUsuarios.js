@@ -24,7 +24,7 @@ function logearUsuario(){
       },200);	
       setTimeout(function(){
 				$('.alert').remove();
-        location.replace('./index.php');
+        location.replace('.');
 			},1800);
     },
     error: function(data){
