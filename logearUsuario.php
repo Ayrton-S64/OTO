@@ -13,10 +13,11 @@
       $_SESSION['user']=$fila['nombre_usuario'];
       $resp = array('success'=>1, 'mensaje'=>'Sesion Iniciada', 'data'=>json_encode($fila));
     } else {
-      $resp = array('success'=>1, 'mensaje'=>'Clave incorrecta');
+      $resp = array('success'=>0, 'mensaje'=>'Clave incorrecta');
     }
   }else{
-    $resp = array('success'=>1, 'mensaje'=>'Usuario no encontrado');
+    $resp = array('success'=>0, 'mensaje'=>'Usuario no encontrado');
   }
+  pg_close($con);
   echo json_encode($resp);
 ?>

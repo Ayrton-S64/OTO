@@ -1,3 +1,6 @@
+<?php
+  include_once('./conexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,6 +84,9 @@
       </div>
       <div class="col-12 col-md-7 accordion overflow-auto" id="taskManager">
         <div class=" taskcontainer h-100">
+          <?php
+
+          ?>
           <div class="vieweritem">
             <div class="taskhead">
               <div class="taskhead__first">
@@ -101,106 +107,7 @@
               <p>De <span>16:00</span> a <span>19:00</span></p>
             </div>
           </div>
-          <div class="vieweritem">
-            <div class="taskhead">
-              <div class="taskhead__first">
-                <a data-toggle="collapse" href="#taskDescription2" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
-                <p class="taskhead__name">Examen EDOO</p>
-              </div>
-              <div class="taskhead__icons">
-                <i class="bi bi-app"></i>
-                <i class="ieliminar bi bi-trash-fill"></i>
-              </div>
-            </div>
-            <div class="taskbody collapse" id="taskDescription2" data-parent="#taskManager">
-              <p>URGENTE</p>
-              <div>
-                <p>Estudiar para poder realizar el examen de EDOO</p>
-              </div>
-              <p>Fecha programada: <span>5/2/2021</span></p>
-              <p>De <span>16:00</span> a <span>19:00</span></p>
-            </div>
-          </div>
-          <div class="vieweritem">
-            <div class="taskhead">
-              <div class="taskhead__first">
-                <a data-toggle="collapse" href="#taskDescription3" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
-                <p class="taskhead__name">Examen EDOO</p>
-              </div>
-              <div class="taskhead__icons">
-                <i class="bi bi-app"></i>
-                <i class="ieliminar bi bi-trash-fill"></i>
-              </div>
-            </div>
-            <div class="taskbody collapse" id="taskDescription3" data-parent="#taskManager">
-              <p>URGENTE</p>
-              <div>
-                <p>Estudiar para poder realizar el examen de EDOO</p>
-              </div>
-              <p>Fecha programada: <span>5/2/2021</span></p>
-              <p>De <span>16:00</span> a <span>19:00</span></p>
-            </div>
-          </div>
-          <div class="vieweritem">
-            <div class="taskhead">
-              <div class="taskhead__first">
-                <a data-toggle="collapse" href="#taskDescription4" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
-                <p class="taskhead__name">Examen EDOO</p>
-              </div>
-              <div class="taskhead__icons">
-                <i class="bi bi-app"></i>
-                <i class="ieliminar bi bi-trash-fill"></i>
-              </div>
-            </div>
-            <div class="taskbody collapse" id="taskDescription4" data-parent="#taskManager">
-              <p>URGENTE</p>
-              <div>
-                <p>Estudiar para poder realizar el examen de EDOO</p>
-              </div>
-              <p>Fecha programada: <span>5/2/2021</span></p>
-              <p>De <span>16:00</span> a <span>19:00</span></p>
-            </div>
-          </div>
-          <div class="vieweritem">
-            <div class="taskhead">
-              <div class="taskhead__first">
-                <a data-toggle="collapse" href="#taskDescription5" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
-                <p class="taskhead__name">Examen EDOO</p>
-              </div>
-              <div class="taskhead__icons">
-                <i class="bi bi-app"></i>
-                <i class="ieliminar bi bi-trash-fill"></i>
-              </div>
-            </div>
-            <div class="taskbody collapse" id="taskDescription5" data-parent="#taskManager">
-              <p>URGENTE</p>
-              <div>
-                <p>Estudiar para poder realizar el examen de EDOO</p>
-              </div>
-              <p>Fecha programada: <span>5/2/2021</span></p>
-              <p>De <span>16:00</span> a <span>19:00</span></p>
-            </div>
-          </div>
-          <div class="vieweritem">
-            <div class="taskhead">
-              <div class="taskhead__first">
-                <a data-toggle="collapse" href="#taskDescription6" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
-                <p class="taskhead__name">Examen EDOO</p>
-              </div>
-              <div class="taskhead__icons">
-                <i class="bi bi-app"></i>
-                <i class="ieliminar bi bi-trash-fill"></i>
-              </div>
-            </div>
-            <div class="taskbody collapse" id="taskDescription6" data-parent="#taskManager">
-              <p>URGENTE</p>
-              <div>
-                <p>Estudiar para poder realizar el examen de EDOO</p>
-              </div>
-              <p>Fecha programada: <span>5/2/2021</span></p>
-              <p>De <span>16:00</span> a <span>19:00</span></p>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -218,7 +125,7 @@
       </div>
     </div>
   </div>
-
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>  

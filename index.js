@@ -53,17 +53,60 @@ cboCategoria.addEventListener('change', changeCbo);
 function agregarTarea(){
   console.log("agregando...");
   nombre = txtnombreTarea.value;
-  tf = dtFechaFin.value.split('-');
-  fecha = `${tf[2]}/${tf[1]}/${tf[0]}`;
+  fecha = dtFechaFin.value;
   tiempoInicio = timeInicio.value;
   tiempoFin = timeFin.value;
   categoria = cboCategoria.selectedOptions[0].innerText;
   descripcion = procesarValueTextArea(tAreaDescripcion.value);
+  valueAsTimeInicio = timeInicio.valueAsDate;
+  valueAsTimeFin = timeFin.valueAsDate;
+  horas =valueAsDateTiempoFin.getUTCHours() - valueAsTimeInicio.getUTCHours();
+  minutos = valueAsDateTiempoFin.getUTCMinutes() - valueAsTimeInicio.getUTCMinutes();
+  strHoras = (horas>9)?`${horas}`:`0${horas}`;
+  strMinutos = (minutos>9)?`${minutos}`:`0${minutos}`;
+  txtDuracion = txtHora + ":" + txtMinuto;
   // verficaciones;
 
 
   if(verificarText(txtnombreTarea) * verificarText(dtFechaFin) * verificarText(timeInicio) * verificarText(timeFin) * verificarCbo(cboCategoria) *  verificarText(tAreaDescripcion)){
-    crearComponente(createJSON(nombre,fecha,tiempoInicio,tiempoFin,categoria,descripcion));
+    $.ajax({
+      type: "POST",
+      url: "./agregarTarea.php",
+      data: "nombreTarea="+nombre+
+            "&fechaInicio="+fecha+
+            "&horaInicio="+tiempoInicio+
+            "&duracion="+txtDuracion+
+            "&descripcion="+descripcion,
+      success: function (response) {
+        objeto = JSON.parse(data);
+        if(objeto.success==1){
+          var tmpl = '<div class="alert alert-success alert-dismissable">'+
+					'<button class="close" data-dismiss="alert">&times;</button>'+
+					objeto.mensaje +
+					'</div>';
+          crearComponente(createJSON(nombre,fecha,tiempoInicio,tiempoFin,categoria,descripcion));
+        }else if(objeto.success==0){
+          var tmpl = '<div class="alert alert-danger alert-dismissable">'+
+					'<button class="close" data-dismiss="alert">&times;</button>'+
+					objeto.mensaje +
+					'</div>';
+        }
+
+        $('#tareasForm').append(tmpl);
+
+        setTimeout(function(){
+          $('.alert').addClass('on');
+        },200);	
+
+        setTimeout(function(){
+          $('.alert').remove();
+        },1000);
+      },
+      error: function (data){
+        console.log("Surgió un error");
+      }
+      
+    });
     tareasForm.reset();  
   }
 }
@@ -71,16 +114,48 @@ function agregarTarea(){
 async function eliminarTarea(tareaItem){
   response = await lanzarAlerta("seguro que quieres eliminar esta tarea!",1,tareaItem);
   console.log("respuesta");
-  console.log(response)
+  console.log(response);
   if(response){
-    tareaItem.remove();
+    $.ajax({
+      type: "POST",
+      url: "./borrarTarea.php",
+      data: "tareaID="+parseInt(tareaItem.id),
+      success: function (response) {
+        objeto = JSON.parse(data);
+        if(objeto.success==1){
+          var tmpl = '<div class="alert alert-success alert-dismissable">'+
+					'<button class="close" data-dismiss="alert">&times;</button>'+
+					objeto.mensaje +
+					'</div>';
+          tareaItem.remove();
+        }else if(objeto.success==0){
+          var tmpl = '<div class="alert alert-danger alert-dismissable">'+
+					'<button class="close" data-dismiss="alert">&times;</button>'+
+					objeto.mensaje +
+					'</div>';
+        }
+        $('#taskManager').append(tmpl);
+
+        setTimeout(function(){
+          $('.alert').addClass('on');
+        },200);	
+
+        setTimeout(function(){
+          $('.alert').remove();
+        },1000);
+      },
+      error: function (data){
+        console.log("Surgió un error");
+      }
+    });
   }
 } 
 
 function createJSON(nombre, fecha, tInicio, tFin, categoria, descripcion){
+  tf = fecha.split('-');
   obj = {
     "nombreTarea": nombre,
-    "fechaFin" : fecha,
+    "fechaFin" : `${tf[2]}/${tf[1]}/${tf[0]}`,
     "tiempoInicio" : tInicio,
     "tiempoFin" : tFin,
     "categoria" : categoria,

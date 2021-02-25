@@ -17,6 +17,11 @@ function logearUsuario(){
 					'<button class="close" data-dismiss="alert">&times;</button>'+
 					objeto.mensaje +
 					'</div>';
+      }else if(objeto.success==0){
+        var tmpl = '<div class="alert alert-danger alert-dismissable">'+
+					'<button class="close" data-dismiss="alert">&times;</button>'+
+					objeto.mensaje +
+					'</div>';
       }
       $('.contenedor').append(tmpl);
       setTimeout(function(){
@@ -24,8 +29,12 @@ function logearUsuario(){
       },200);	
       setTimeout(function(){
 				$('.alert').remove();
-        location.replace('.');
-			},1800);
+        if(objeto.success==1){
+          location.replace('.');
+        } else {
+          $('#loginForm').trigger("reset");
+        }
+			},1000);
     },
     error: function(data){
       console.log("Surgió un error");
