@@ -93,7 +93,7 @@
             if(pg_num_rows($result)>0){
               $html = "";
               while($fila = pg_fetch_array($result)){
-                $html .= '<div class="vieweritem">
+                $html .= '<div class="vieweritem" id="'.$fila['id_tarea'].'">
                 <div class="taskhead">
                   <div class="taskhead__first">
                     <a data-toggle="collapse" href="#taskDescription'.$fila['id_tarea'].'" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>

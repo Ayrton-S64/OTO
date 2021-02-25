@@ -173,7 +173,7 @@ function crearComponente(tarea){
   eHTML = taskContainer[0]
   let nElem = eHTML.childElementCount;
   eHTML.innerHTML += `
-  <div class="vieweritem">
+  <div class="vieweritem" id="${tarea.idTarea + 1}">
     <div class="taskhead">
       <div class="taskhead__first">
         <a data-toggle="collapse" href="#taskDescription${tarea.idTarea + 1}" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
