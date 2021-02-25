@@ -18,7 +18,7 @@ function logearUsuario(){
 					objeto.mensaje +
 					'</div>';
       }
-      $(body).append(tmpl);
+      $('.contenedor').append(tmpl);
       setTimeout(function(){
         $('.alert').addClass('on');
       },200);	
