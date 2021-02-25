@@ -6,7 +6,7 @@ function logearUsuario(){
   let param_clave = $('#txtClave').val();
   $.ajax({
     type: "POST",
-    url: "./controlUsuario.php",
+    url: "./logearUsuario.php",
     data: 'param_opcion='+param_opcion+
           '&param_usuario='+param_user+
           '&param_clave='+param_clave,
