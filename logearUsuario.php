@@ -1,4 +1,5 @@
 <?php
+  echo "Hola mundo";
   session_start();
   $con = conectar();
   $user = $_REQUEST['usuario'];
