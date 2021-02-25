@@ -1,7 +1,9 @@
 <?php
-  echo "Hola mundo";
+  echo "Hola mundo\n";
   session_start();
+  echo "Conectando";
   $con = conectar();
+  echo "Conexcion realizada";
   $user = $_REQUEST['usuario'];
   $clave = $_REQUEST['clave'];
   $query = "SELECT * FROM USUARIOS WHERE nombre_usuario='".$user."';";
@@ -12,12 +14,11 @@
     if($fila['clave']==$clave){
       $_SESSION['user_id']=$fila['id_usuario'];
       $_SESSION['user']=$fila['nombre_usuario'];
-      $resp = array('success'=>1, 'mensaje'=>'Sesion Iniciada', 'data'=>json_encode($fila));
+      echo "Exito"
     } else {
-      $resp = array('success'=>1, 'mensaje'=>'Clave incorrecta');
+      echo "Contraseña incorrecta"
     }
   }else{
-    $resp = array('success'=>1, 'mensaje'=>'Usuario no encontrado');
+    echo "No hay dato"
   }
-  echo json_encode($resp);
 ?>
