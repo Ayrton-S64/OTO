@@ -7,9 +7,8 @@ function logearUsuario(){
   $.ajax({
     type: "POST",
     url: "./logearUsuario.php",
-    data: 'param_opcion='+param_opcion+
-          '&param_usuario='+param_user+
-          '&param_clave='+param_clave,
+    data: 'usuario='+param_user+
+          '&clave='+param_clave,
     success: function (data) {
       objeto = JSON.parse(data);
       prueba = data;
