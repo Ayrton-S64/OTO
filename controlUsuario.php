@@ -23,9 +23,6 @@
   if (isset($_POST['param_celular'])){
     $param['param_celular']=$_POST['param_celular'];
   }
-  echo $param['param_opcion'];
-  echo $param['param_usuario'];
-  echo $param['param_clave'];
-  // $clase = new Clase_usuario();
-  // echo $Clase->gestionar($param);
+  $clase = new Clase_usuario();
+  echo $Clase->gestionar($param);
 ?>
