@@ -16,7 +16,7 @@
       $_SESSION['user']=$fila['nombre_usuario'];
       echo "Exito";
     } else {
-      echo "Contraseña incorrecta"
+      echo "Contraseña incorrecta";
     }
   }else{
     echo "No hay dato";
