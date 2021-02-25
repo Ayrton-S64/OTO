@@ -13,14 +13,14 @@
         <div class="ms-motion-scaleDownIn centrado" align="center">
             <!--label class="ms-fontSize-20">Iniciar Sesión</label> <br> <br-->
             <br> <img src="img/logo.png" alt="logo" width="200px"> <br> <br>
-            <form action="">
+            <form id="loginForm" onsubmit="logearUsuario(); return false">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Contact" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" required>
+                    <input id="txtUsuario" type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Permissions" aria-hidden="true"></i></span>
-                    <input type="password" class="form-control" placeholder="Clave" aria-label="Clave" aria-describedby="basic-addon1" required>
+                    <input type="password" id="txtClave" class="form-control" placeholder="Clave" aria-label="Clave" aria-describedby="basic-addon1" required>
                 </div>
                 <button type="submit" class="btn btn-outline-secondary" style="width: 100%;" href="index.html">Ingresar</button>
             </form> <br>
@@ -44,14 +44,8 @@
             margin-left: -175px;
             padding: 28px;
         }
-        .about{
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            margin-right: -100px;
-        }
     </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./controlUsuarios.js"></script>
 </body>
 </html>

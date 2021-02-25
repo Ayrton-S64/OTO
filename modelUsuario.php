@@ -31,7 +31,7 @@
         if($fila['clave']==$clave){
           $_SESSION['user_id']=$fila['id_usuario'];
           $_SESSION['user']=$fila['nombre_usuario'];
-          $resp = array('success'=>0, 'mensaje'=>'Sesion Iniciada', 'data'=>json_encode($fila));
+          $resp = array('success'=>1, 'mensaje'=>'Sesion Iniciada', 'data'=>json_encode($fila));
         } else {
           $resp = array('success'=>0, 'mensaje'=>'Clave incorrecta');
         }
