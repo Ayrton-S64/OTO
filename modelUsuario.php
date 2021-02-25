@@ -1,5 +1,25 @@
 <?php
   include_once './conexion.php';
+
+  session_start();
+      $con = conectar();
+      $user = $this->param['param_usuario'];
+      $clave = $this->param['param_clave'];
+
+      $result = pg_query('SELECT * FROM USUARIOS WHERE nombre_usuario="'.$user.'";');
+      if(pg_num_rows($result)==1){
+        $fila = pg_fetch_array($result);
+        if($fila['clave']==$clave){
+          $_SESSION['user_id']=$fila['id_usuario'];
+          $_SESSION['user']=$fila['nombre_usuario'];
+          echo 'se encontró el usuario';
+        } else {
+          echo 'Clave Incorrecta: '.$clave;
+        }
+      }else{
+        echo "No se encuentra ".$user;
+      }
+
   class Clase_usuario{
     private $param = array();
     private $con;
