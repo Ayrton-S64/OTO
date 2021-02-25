@@ -90,29 +90,35 @@
             $totalTareas = pg_num_rows($respuesta);
             $query = "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";";
             $result = pg_query($query);
-            $html = "";
-            while($fila = pg_fetch_array($result)){
-              $html .= '<div class="vieweritem">
-              <div class="taskhead">
-                <div class="taskhead__first">
-                  <a data-toggle="collapse" href="#taskDescription'.($totalTareas + 1).'" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
-                  <p class="taskhead__name">'.$fila['nombre_tarea'].'</p>
+            if(pg_num_rows($result)>0){
+              $html = "";
+              while($fila = pg_fetch_array($result)){
+                $html .= '<div class="vieweritem">
+                <div class="taskhead">
+                  <div class="taskhead__first">
+                    <a data-toggle="collapse" href="#taskDescription'.($totalTareas + 1).'" role="button" aria-expanded="false" aria-controls="taskbody"><i class="icon-collapse bi bi-chevron-compact-right"></i></a>
+                    <p class="taskhead__name">'.$fila['nombre_tarea'].'</p>
+                  </div>
+                  <div class="taskhead__icons">
+                    <i class="bi bi-app"></i>
+                    <i class="ieliminar bi bi-trash-fill"></i>
+                  </div>
                 </div>
-                <div class="taskhead__icons">
-                  <i class="bi bi-app"></i>
-                  <i class="ieliminar bi bi-trash-fill"></i>
+                <div class="taskbody collapse" id="taskDescription'.($totalTareas + 1).'" data-parent="#taskManager">
+                  <p>En proceso...</p>
+                  <div>
+                    <p>'.$fila['descripcion'].'</p>
+                  </div>
+                  <p>Fecha programada: <span>'.$fila['fecha'].'</span></p>
+                  <p>De <span>'.$fila['hora_inicio'].'</span> Duración: <span>'.$fila['duracion'].'</span></p>
                 </div>
-              </div>
-              <div class="taskbody collapse" id="taskDescription'.($totalTareas + 1).'" data-parent="#taskManager">
-                <p>En proceso...</p>
-                <div>
-                  <p>'.$fila['descripcion'].'</p>
-                </div>
-                <p>Fecha programada: <span>'.$fila['fecha'].'</span></p>
-                <p>De <span>'.$fila['hora_inicio'].'</span> Duración: <span>'.$fila['duracion'].'</span></p>
-              </div>
-            </div>';
+              </div>';
+              }
+            } else{
+              $html = '<p>Usted no tiene tareas agregadas...</p>';
             }
+            
+            echo $html;
           ?>
           
 
