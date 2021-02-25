@@ -4,7 +4,7 @@
   echo "Testing...";
   
   $con = conectar();
-  $query =  'SELECT * FROM usuarios WHERE nombre_usuario="'."ADMIN".';';
+  $query =  'SELECT * FROM usuarios WHERE nombre_usuario="'."ADMIN".'";';
   $result = pg_query($query) or die('La consulta fallo: '.pg_last_error());
   
   echo "Connected to the DB\n";
