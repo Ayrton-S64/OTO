@@ -9,7 +9,7 @@
   $duracion = $_REQUEST['duracion'];
   $descripcion = $_REQUEST['descripcion'];
   $query = "INSERT INTO tareas(id_usuario, nombre_tarea, fecha, hora_inicio, duracion, descripcion, estado)
-                            VALUES (".$userID.", '".$nombreTarea."', ".$fecha.", ".$horaInicio.", ".$duracion.", '".$descripcion."', 1);";
+                            VALUES (".$userID.", '".$nombreTarea."', '".$fecha."', '".$horaInicio."', '".$duracion."', '".$descripcion."', 1);";
   $result = pg_query($query);
   if(!$result){
     $resp = array('success'=>0, 'mensaje'=>'Surgió un problema al agregar la tarea');
