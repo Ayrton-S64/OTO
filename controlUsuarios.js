@@ -15,8 +15,7 @@ function logearUsuario(){
       prueba = data;
     },
     error: function(data){
-      objeto = JSON.parse(data);
-      prueba = data;
+      console.log("Surgió un error");
     }
   });
 }
