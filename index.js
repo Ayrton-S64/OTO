@@ -60,11 +60,11 @@ function agregarTarea(){
   descripcion = procesarValueTextArea(tAreaDescripcion.value);
   valueAsTimeInicio = timeInicio.valueAsDate;
   valueAsTimeFin = timeFin.valueAsDate;
-  horas =valueAsDateTiempoFin.getUTCHours() - valueAsTimeInicio.getUTCHours();
-  minutos = valueAsDateTiempoFin.getUTCMinutes() - valueAsTimeInicio.getUTCMinutes();
+  horas =valueAsTimeFin.getUTCHours() - valueAsTimeInicio.getUTCHours();
+  minutos = valueAsTimeFin.getUTCMinutes() - valueAsTimeInicio.getUTCMinutes();
   strHoras = (horas>9)?`${horas}`:`0${horas}`;
   strMinutos = (minutos>9)?`${minutos}`:`0${minutos}`;
-  txtDuracion = txtHora + ":" + txtMinuto;
+  txtDuracion = strHoras + ":" + strMinutos;
   // verficaciones;
 
 
