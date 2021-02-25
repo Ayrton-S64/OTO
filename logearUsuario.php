@@ -1,12 +1,10 @@
 <?php
   include_once ('./conexion.php');
-  echo "Hola mundo";
   session_start();
   $con = conectar();
   $user = $_REQUEST['usuario'];
   $clave = $_REQUEST['clave'];
   $query = "SELECT * FROM USUARIOS WHERE nombre_usuario='".$user."';";
-  echo $query;
   $result = pg_query($query);
   if(pg_num_rows($result)==1){
     $fila = pg_fetch_array($result);
