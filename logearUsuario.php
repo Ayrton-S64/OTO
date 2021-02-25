@@ -1,4 +1,5 @@
 <?php
+  include_once('./conexion.php');
   echo "Hola mundo \n";
   session_start();
   echo "Conectando";
