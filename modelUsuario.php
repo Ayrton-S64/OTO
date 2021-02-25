@@ -46,6 +46,7 @@
       $user = $this->param['param_usuario'];
       $clave = $this->param['param_clave'];
       $query = "SELECT * FROM USUARIOS WHERE nombre_usuario='".$user."';";
+      echo $query;
       $result = pg_query($query);
       if(pg_num_rows($result)==1){
         $fila = pg_fetch_array($result);
