@@ -29,7 +29,7 @@
       $this->param = $param;
       switch ($param['param_opcion']) {
         case 'logear':
-          echo $this->logearUsuario();
+          echo $this->param['param_usuario'];
           break;
         case 'registrar':
           echo $this->registrarUsuario();
