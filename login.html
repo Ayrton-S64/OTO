@@ -1,64 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="styles.css">
-  <title>OTO -INGRESAR AL SITIO</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion - Oto Task</title>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
-<body>
-<div class="container-fluid">
-    <header>
-        <div class="row">
-        <div class="col-12"> <br> <br>
-        </div>
-        </div>
-    </header>
-   
-    <div class="row" align="center" >
-
-        <div class="col-12 " align="center">   OTO <br><br></div>
-       
-        <div class="d-md-block col-md-3">
-
-        </div>
-     
-        <div class="col-md-6" align="center">
-           
-            
-            <form>
-            <div class="form-group row">
-                <label for="user" class="col-sm-3 col-form-label"> Usuario </label>
-                <div class="col-sm-9">
-                  <input type="usuario" class="form-control" id="user">
+<body class="ms-Fabric" dir="ltr">
+    <div class="contenedor">
+        <div class="ms-motion-scaleDownIn centrado" align="center">
+            <!--label class="ms-fontSize-20">Iniciar Sesión</label> <br> <br-->
+            <br> <img src="img/logo.png" alt="logo" width="200px"> <br> <br>
+            <form action="">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Contact" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" required>
                 </div>
-              </div>
-              <div class="form-group row">
-                <label for="contraseña" class="col-sm-3 col-form-label">Contraseña</label>
-                <div class="col-sm-9">
-                  <input type="password" class="form-control" id="contraseña">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Permissions" aria-hidden="true"></i></span>
+                    <input type="password" class="form-control" placeholder="Clave" aria-label="Clave" aria-describedby="basic-addon1" required>
                 </div>
-              </div>
-
-              <div class="col-12">
-                  No tienes una cuenta ?   <a href="registro.html"> Registrate!</a>
-              </div>
-            </form>
-
-            
-              
+                <button type="submit" class="btn btn-outline-secondary" style="width: 100%;" href="index.html">Ingresar</button>
+            </form> <br>
+            <p class="ms-fontSize-14">¿No tienes cuenta? <a href="registro.html">Crear una cuenta.</a></p>
         </div>
-
-        <div class="d-sm-block col-md-3">
-
-        </div>
-        
     </div>
-
-</div>
-
-
+    <style>
+        html,body{margin:0%;}
+        .contenedor{
+            background: #f3f2f1;
+            height: 100vh;
+        }
+        .centrado{
+            background: white;
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -175px;
+            margin-left: -175px;
+            padding: 28px;
+        }
+        .about{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            margin-right: -100px;
+        }
+    </style>
 </body>
 </html>
