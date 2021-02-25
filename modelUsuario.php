@@ -1,6 +1,5 @@
 <?php
   include_once './conexion.php';
-  echo "Esto es un tesst";
   session_start();
       // $con = conectar();
       // $user = $_REQUEST['user'];
@@ -22,6 +21,7 @@
       // echo "terminó el test"
 
   class Clase_usuario{
+
     private $param = array();
     private $con;
 
@@ -29,7 +29,7 @@
       $this->param = $param;
       switch ($param['param_opcion']) {
         case 'logear':
-          echo $this->param['param_usuario'];
+          echo $this->logearUsuario();
           break;
         case 'registrar':
           echo $this->registrarUsuario();
@@ -42,7 +42,8 @@
 
     private function logearUsuario(){
       session_start();
-      $con = conectar();
+      $conn_string = 'dbname=da14tgvhr874p2 host=ec2-52-22-161-59.compute-1.amazonaws.com port=5432 user=rzlfddaekpdauw password=104c50531b81f50affca244b773a6f428079c01ca21d9cc61e0274c5d25c9cba sslmode=require';
+      $con = pg_connect($conn_string) or die('Could not connect: '. pg_last_error());
       $user = $this->param['param_usuario'];
       $clave = $this->param['param_clave'];
       $query = "SELECT * FROM USUARIOS WHERE nombre_usuario='".$user."';";
