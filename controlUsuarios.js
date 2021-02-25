@@ -1,0 +1,7 @@
+function logearUsuario(){
+
+}
+
+function registrarUsuario(){
+  
+}
