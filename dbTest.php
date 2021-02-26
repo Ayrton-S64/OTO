@@ -1,30 +1,12 @@
 <?php
-  require_once('./conexion.php');
+$url ='https://a6a748bf-203f-4af8-abb9-6e6295bafaef:Wa9jklJkXzMrEYD4gAvzpA@api.blower.io' . "/messages";
+$data = array('to' => '+51933856134', 'message' => 'Hello from Blower.io');
 
-  echo "Testing...";
-  $con = conectar();
-  $result = pg_query("SELECT * FROM tareas WHERE id_usuario=1 AND fecha='2021-02-25';");
-  while($fila = pg_fetch_array($result)){
-    $dbDate = $fila['fecha'];
-    $dbInicio = $fila['hora_inicio'];
-    $dbFin = $fila['hora_inicio'] + $fila['duracion'];
-    $dbDuracion = $fila['duracion'];
-    $miFechaInicio = new DateTime($dbDate." ".$dbInicio);
-    $tempFecha = new DateTime($dbDate." ".$dbDuracion);
-    $diferencia = $miFechaInicio->diff($tempFecha);
-    $miFechaFin = clone $miFechaInicio;
-    $tiempo = explode(':',$dbDuracion);
-    $miFechaFin->modify('+ '.$tiempo[0].' hour');
-    $miFechaFin->modify('+ '.$tiempo[1].' minutes');
-    $newDAte = new DateTime('2021-02-25 16:44:00');
-    echo "DbDATE=".gettype($dbDate)."<br>";
-    echo "DbInicio=".$dbDate." ".$dbInicio."<br>";
-    echo "DbDuracion=".$dbDuracion."<br>";
-    echo "DbFin=".$dbFin."<br>";
-    echo "iFecha=".date_format($miFechaInicio,'Y-m-d H:i:s')."<br>";
-    echo "dFecha=".date_format($tempFecha,'Y-m-d H:i:s')."<br>";
-    echo "fFecha=".date_format($miFechaFin,'Y-m-d H:i:s')."<br>";
-    echo "<br>";
-  }
-  echo "testFinalizado";
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+curl_close($ch);
 ?>

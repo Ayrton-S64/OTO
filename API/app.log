@@ -1,0 +1,47 @@
+
+Fri, 26 Feb 2021 07:06:11 +0000 : Add destination &dest=346xxxxxxxx&dest=346yyyyyyyy&
+
+Fri, 26 Feb 2021 07:06:11 +0000 : NO domainId
+
+Fri, 26 Feb 2021 07:06:11 +0000 : NO senderId 
+
+Fri, 26 Feb 2021 07:06:11 +0000 : NO concat 
+
+Fri, 26 Feb 2021 07:06:11 +0000 : NO encoding
+
+Fri, 26 Feb 2021 07:06:12 +0000 : Server Altiria response: ERROR errNum:020
+
+Fri, 26 Feb 2021 07:06:12 +0000 : Error sending SMS: ERROR errNum:020
+
+Fri, 26 Feb 2021 07:06:25 +0000 : NO domainId
+
+Fri, 26 Feb 2021 07:06:25 +0000 : NO senderId 
+
+Fri, 26 Feb 2021 07:06:25 +0000 : NO concat 
+
+Fri, 26 Feb 2021 07:06:25 +0000 : NO encoding
+
+Fri, 26 Feb 2021 07:06:25 +0000 : Server Altiria response: OK dest:51933856145
+
+
+Fri, 26 Feb 2021 07:07:25 +0000 : NO domainId
+
+Fri, 26 Feb 2021 07:07:25 +0000 : NO senderId 
+
+Fri, 26 Feb 2021 07:07:25 +0000 : NO concat 
+
+Fri, 26 Feb 2021 07:07:25 +0000 : NO encoding
+
+Fri, 26 Feb 2021 07:07:26 +0000 : Server Altiria response: OK dest:51933856135
+
+
+Fri, 26 Feb 2021 07:07:34 +0000 : NO domainId
+
+Fri, 26 Feb 2021 07:07:34 +0000 : NO senderId 
+
+Fri, 26 Feb 2021 07:07:34 +0000 : NO concat 
+
+Fri, 26 Feb 2021 07:07:34 +0000 : NO encoding
+
+Fri, 26 Feb 2021 07:07:35 +0000 : Server Altiria response: OK dest:51933856134
+

@@ -8,8 +8,7 @@
 
 // XX, YY y ZZ se corresponden con los valores de identificacion del
 // usuario en el sistema.
-include('./API/httpPHPAltiria.php');
-session_start();
+include('httpPHPAltiria.php');
 
 $altiriaSMS = new AltiriaSMS();
 
@@ -26,24 +25,14 @@ $altiriaSMS->setDebug(true);
 //$altiriaSMS->setEncoding('unicode');
 
 //$sDestination = '346xxxxxxxx';
-$con = conectar();
-$result = pg_query('SELECT * FROM usuarios WHERE id_usuario='.$_SESSION['userID'].';');
-$fila = pg_fetch_array($result);
-$sDestination = '51'.$fila['telefono'].'';
+$sDestination = '51933856134';
 //$sDestination = array('346xxxxxxxx','346yyyyyyyy');
-$mensaje = "Tienes las siguientes tareas pendientes:\n";
 
-$result = pg_query("SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['userID'].";");
-
-while($fila = pg_fetch_array($result)){
-   $mensaje .= '   -'.$fila['nombre_tarea'].'para '.$fila['fecha'].'\n';
-}
-$mensaje.="para mas detalle entrar a https://oto-task.herokuapp.com/";
-
-$response = $altiriaSMS->sendSMS($sDestination, $mensaje);
+$response = $altiriaSMS->sendSMS($sDestination, "Mensaje de prueba desde la API de altiria.");
 
 if (!$response)
   echo "El env�o ha terminado en error";
 else
   echo $response;
 ?>
+
