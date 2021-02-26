@@ -46,7 +46,7 @@ function registrarUsuario(){
   let param_celular = $('#txtCelular').val();
   $.ajax({
     type: "POST",
-    url: "./logearUsuario.php",
+    url: "./registrarUsuario.php",
     data: 'usuario='+param_user+
           '&clave='+param_clave+
           '&correo='+param_correo+
