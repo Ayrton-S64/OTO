@@ -3,7 +3,7 @@
 
   echo "Testing...";
   $con = conectar();
-  $result = pg_query("SELECT * FROM tareas WHERE id_usuario=1 AND fecha='2021-02-25');");
+  $result = pg_query("SELECT * FROM tareas WHERE id_usuario=1 AND fecha='2021-02-25';");
   while($fila = pg_fetch_array($result)){
     $dbDate = $fila['fecha'];
     $dbInicio = $fila['hora_inicio'];
@@ -16,4 +16,5 @@
     echo "oFecha=".date_format($miFecha,'Y-m-d H:i:s')."\n";
     echo "\n";
   }
+  echo "testFinalizado";
 ?>
