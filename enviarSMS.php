@@ -47,7 +47,7 @@ if(pg_num_rows($result)==1){
   }
   $mensaje.="para mas detalle entrar a https://oto-task.herokuapp.com/";
 }else{
-  $mensaje= "No tienes ninguna tarea pendiente, Bien hecho :D";
+  $mensaje= "No tienes ninguna tarea pendiente, felicitaciones departe del equipo de otoTask :D";
 }
 if(!isset($_SESSION['enviado'])){
   $response = $altiriaSMS->sendSMS($sDestination, $mensaje);
