@@ -12,7 +12,8 @@
     $miFechaInicio = new DateTime($dbDate." ".$dbInicio);
     $tempFecha = new DateTime($dbDate." ".$dbDuracion);
     $diferencia = $miFechaInicio->diff($tempFecha);
-    $miFechaFin = (new DateTime($dbDate." ".$dbInicio))->add($diferencia);
+    $miFechaFin = new DateTime($dbDate." ".$dbInicio);
+    $miFechaFin->add($diferencia);
     $newDAte = new DateTime('2021-02-25 16:44:00');
     echo "DbDATE=".gettype($dbDate)."<br>";
     echo "DbInicio=".$dbDate." ".$dbInicio."<br>";
@@ -20,6 +21,7 @@
     echo "DbFin=".$dbFin."<br>";
     echo "iFecha=".date_format($miFechaInicio,'Y-m-d H:i:s')."<br>";
     echo "dFecha=".date_format($newDAte,'Y-m-d H:i:s')."<br>";
+    print_r($diferencia);
     echo "fFecha=".date_format($miFechaFin,'Y-m-d H:i:s')."<br>";
     echo "<br>";
   }
