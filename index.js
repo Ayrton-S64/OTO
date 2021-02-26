@@ -78,7 +78,7 @@ async function enviarTarea(){
             "&duracion="+txtDuracion+
             "&descripcion="+descripcion+
             "&forzar=0",
-      success: await function (data) {
+      success: async function (data) {
         objeto = JSON.parse(data);
         if(objeto.success==1){
           var tmpl = '<div class="alert alert-success alert-dismissable">'+
