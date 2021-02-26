@@ -9,6 +9,7 @@
 // XX, YY y ZZ se corresponden con los valores de identificacion del
 // usuario en el sistema.
 include('./API/httpPHPAltiria.php');
+include('./conexion.php');
 session_start();
 
 $altiriaSMS = new AltiriaSMS();
