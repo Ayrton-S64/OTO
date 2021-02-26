@@ -34,7 +34,7 @@ $sDestination = '51'.$fila['telefono'].'';
 //$sDestination = array('346xxxxxxxx','346yyyyyyyy');
 $mensaje = "Tienes las siguientes tareas pendientes:\n";
 echo "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";";
-$result = pg_query("SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";");
+$result = pg_query("SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id']." LIMIT 1;");
 $tempFecha = "";
 while($fila = pg_fetch_array($result)){
    if($fila['fecha']!=$tempFecha){
