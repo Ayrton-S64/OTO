@@ -20,8 +20,7 @@
     echo "DbDuracion=".$dbDuracion."<br>";
     echo "DbFin=".$dbFin."<br>";
     echo "iFecha=".date_format($miFechaInicio,'Y-m-d H:i:s')."<br>";
-    echo "dFecha=".date_format($newDAte,'Y-m-d H:i:s')."<br>";
-    print_r($diferencia);
+    echo "dFecha=".date_format($tempFecha,'Y-m-d H:i:s')."<br>";
     echo "fFecha=".date_format($miFechaFin,'Y-m-d H:i:s')."<br>";
     echo "<br>";
   }
