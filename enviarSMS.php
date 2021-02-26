@@ -59,9 +59,9 @@ if(!isset($_SESSION['enviado'])){
   else{
     echo $response;
     $_SESSION['enviado']=TRUE;
-  }else{
-    echo "El mensaje ya fue enviado";
   }
+}else{
+  echo "El mensaje ya fue enviado";
 }
 
 ?>
