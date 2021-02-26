@@ -49,7 +49,7 @@ if(pg_num_rows($result)>1){
 }else{
   $mensaje= "No tienes ninguna tarea pendiente, Bien hecho :D";
 }
-if(!$_SESSION['enviado']){
+if(!isset($_SESSION['enviado'])){
   $response = $altiriaSMS->sendSMS($sDestination, $mensaje);
   echo $sDestination;
   echo $mensaje;
