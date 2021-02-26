@@ -32,7 +32,7 @@ $result = pg_query('SELECT * FROM usuarios WHERE id_usuario='.$_SESSION['user_id
 $fila = pg_fetch_array($result);
 $sDestination = '51'.$fila['telefono'].'';
 //$sDestination = array('346xxxxxxxx','346yyyyyyyy');
-$mensaje = "Tienes las siguientes tareas pendientes:\n";
+$mensaje = "Tienes las siguientes tareas pendientes:%OA";
 echo "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";";
 $result = pg_query("SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id']." LIMIT 1;");
 $tempFecha = "";
@@ -41,7 +41,7 @@ while($fila = pg_fetch_array($result)){
       $mensaje.=' '.$fila['fecha'].':';
       $tempFecha = $fila['fecha'];
    }
-   $mensaje .= '   -'.$fila['nombre_tarea'].'\n';
+   $mensaje .= '   -'.$fila['nombre_tarea']. ' para las '.substr($fila['hora_inicio'],0,5).'%OA';
 }
 $mensaje.="para mas detalle entrar a https://oto-task.herokuapp.com/";
 

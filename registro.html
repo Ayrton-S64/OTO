@@ -15,21 +15,21 @@
             <form action="">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Contact" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" required>
+                    <input type="text" class="form-control" id="txtUsuario" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Mail" aria-hidden="true"></i></span>
-                    <input type="email" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="basic-addon1" required>
+                    <input type="email" class="form-control" id="txtCorreo" placeholder="Correo" aria-label="Correo" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--CellPhone" aria-hidden="true"></i></span>
-                    <input type="number" class="form-control" placeholder="Celular" aria-label="Celular" aria-describedby="basic-addon1" required>
+                    <input type="number" class="form-control" id="txtCelular" placeholder="Celular" aria-label="Celular" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="ms-Icon ms-Icon--Permissions" aria-hidden="true"></i></span>
-                    <input type="password" class="form-control" placeholder="Clave" aria-label="Clave" aria-describedby="basic-addon1" required>
+                    <input type="password" class="form-control" id="txtClave" placeholder="Clave" aria-label="Clave" aria-describedby="basic-addon1" required>
                 </div>
-                <button type="submit" class="btn btn-outline-secondary" style="width: 100%;">Crear</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="registrarUsuario()" style="width: 100%;">Crear</button>
             </form> <br>
             <p class="ms-fontSize-14">¿Tienes cuenta? ¿Total? <a href="login.html">Iniciar sesión.</a></p>
         </div>
@@ -53,5 +53,7 @@
             padding: 28px;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./controlUsuarios.js"></script>    
 </body>
 </html>
