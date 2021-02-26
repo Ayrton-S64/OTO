@@ -50,8 +50,8 @@ btnCerrarAlerta.addEventListener('click', cerrarAlerta);
 cboCategoria.addEventListener('change', changeCbo);
 
 //funciones
-async function agregarTarea(){
-  console.log("agregando...");
+async function enviarTarea(){
+  
   nombre = txtnombreTarea.value;
   fecha = dtFechaFin.value;
   tiempoInicio = timeInicio.value;
@@ -139,6 +139,11 @@ async function agregarTarea(){
     });
     tareasForm.reset();  
   }
+}
+
+function agregarTarea(){
+  console.log("agregando...");
+  enviarTarea();
 }
 
 async function eliminarTarea(tareaItem){
