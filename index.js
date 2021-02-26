@@ -50,7 +50,7 @@ btnCerrarAlerta.addEventListener('click', cerrarAlerta);
 cboCategoria.addEventListener('change', changeCbo);
 
 //funciones
-function agregarTarea(){
+async function agregarTarea(){
   console.log("agregando...");
   nombre = txtnombreTarea.value;
   fecha = dtFechaFin.value;
@@ -76,7 +76,8 @@ function agregarTarea(){
             "&fechaInicio="+fecha+
             "&horaInicio="+tiempoInicio+
             "&duracion="+txtDuracion+
-            "&descripcion="+descripcion,
+            "&descripcion="+descripcion+
+            "&forzar=0",
       success: function (data) {
         objeto = JSON.parse(data);
         if(objeto.success==1){
@@ -90,8 +91,37 @@ function agregarTarea(){
 					'<button class="close" data-dismiss="alert">&times;</button>'+
 					objeto.mensaje +
 					'</div>';
+        }else if(objeto.response==2){
+          response = await lanzarAlerta(objeto.mensaje, 2, null);
+          if(response){
+            $.ajax({
+              type: "POST",
+              url: "./agregarTarea.php",
+              data: "nombreTarea="+nombre+
+                    "&fechaInicio="+fecha+
+                    "&horaInicio="+tiempoInicio+
+                    "&duracion="+txtDuracion+
+                    "&descripcion="+descripcion+
+                    "&forzar=1",
+              success: function (response) {
+                objeto = JSON.parse(data);
+                if(objeto.success==1){
+                  var tmpl = '<div class="alert alert-success alert-dismissable">'+
+                  '<button class="close" data-dismiss="alert">&times;</button>'+
+                  objeto.mensaje +
+                  '</div>';
+                  crearComponente(createJSON(nombre,fecha,tiempoInicio,tiempoFin,categoria,descripcion,objeto.total));
+                }else if(objeto.success==0){
+                  var tmpl = '<div class="alert alert-danger alert-dismissable">'+
+                  '<button class="close" data-dismiss="alert">&times;</button>'+
+                  objeto.mensaje +
+                  '</div>';
+                }
+              }
+            });
+          }
         }
-
+        
         $('#tareasForm').append(tmpl);
 
         setTimeout(function(){
