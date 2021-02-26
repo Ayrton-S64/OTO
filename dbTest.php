@@ -12,8 +12,10 @@
     $miFechaInicio = new DateTime($dbDate." ".$dbInicio);
     $tempFecha = new DateTime($dbDate." ".$dbDuracion);
     $diferencia = $miFechaInicio->diff($tempFecha);
-    $miFechaFin = new DateTime($dbDate." ".$dbInicio);
-    $miFechaFin->add($diferencia);
+    $miFechaFin = clone $miFechaInicio;
+    $tiempo = explode(':',$dbDuracion);
+    $miFechaFin->modify('+ '.$tiempo[0].' hour');
+    $miFechaFin->modify('+ '.$tiempo[1].' minutes');
     $newDAte = new DateTime('2021-02-25 16:44:00');
     echo "DbDATE=".gettype($dbDate)."<br>";
     echo "DbInicio=".$dbDate." ".$dbInicio."<br>";
