@@ -115,7 +115,7 @@
               </div>';
               }
             } else{
-              $html = '<p>Usted no tiene tareas agregadas...</p>';
+              
             }
             
             echo $html;

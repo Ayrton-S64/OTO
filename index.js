@@ -208,7 +208,6 @@ function crearComponente(tarea){
   tareasForm.reset();
   eHTML = taskContainer[0]
   let nElem = eHTML.childElementCount;
-  if()
   eHTML.innerHTML += `
   <div class="vieweritem" id="${tarea.idTarea + 1}">
     <div class="taskhead">
