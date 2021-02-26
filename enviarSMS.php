@@ -16,6 +16,7 @@ $altiriaSMS = new AltiriaSMS();
 
 $altiriaSMS->setLogin('ayrtonxd.123@gmail.com');
 $altiriaSMS->setPassword('db28c34b');
+$altiriaSMS->setDomainId('CLI_3184');
 
 $altiriaSMS->setDebug(true);
 
