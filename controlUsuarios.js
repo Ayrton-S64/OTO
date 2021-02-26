@@ -48,6 +48,10 @@ function registrarUsuario(){
     alert("numero de telefono deben ser 9 digitos");
     return 0;
   }
+  if(param_clave.length >8){
+    alert("La contraseña no debe exceder de 8 caracteres");
+    return 0;
+  }
   $.ajax({
     type: "POST",
     url: "./registrarUsuario.php",
