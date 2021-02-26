@@ -50,7 +50,7 @@ btnCerrarAlerta.addEventListener('click', cerrarAlerta);
 cboCategoria.addEventListener('change', changeCbo);
 
 //funciones
-async function enviarTarea(){
+function enviarTarea(){
   
   nombre = txtnombreTarea.value;
   fecha = dtFechaFin.value;
@@ -91,8 +91,8 @@ async function enviarTarea(){
 					'<button class="close" data-dismiss="alert">&times;</button>'+
 					objeto.mensaje +
 					'</div>';
-        }else if(objeto.response==2){
-          response = await lanzarAlerta(objeto.mensaje, 2, null);
+        }else if(objeto.success==2){
+          response = await lanzarAlerta(objeto.mensaje, 1, taskContainer);
           if(response){
             $.ajax({
               type: "POST",
