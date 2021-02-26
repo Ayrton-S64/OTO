@@ -42,7 +42,8 @@ while($fila = pg_fetch_array($result)){
 $mensaje.="para mas detalle entrar a https://oto-task.herokuapp.com/";
 
 $response = $altiriaSMS->sendSMS($sDestination, $mensaje);
-
+echo $sDestination;
+echo $mensaje;
 if (!$response)
   echo "El env�o ha terminado en error";
 else
