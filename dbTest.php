@@ -13,12 +13,13 @@
     $tempFecha = new DateTime($dbDate." ".$dbDuracion);
     $diferencia = $miFechaInicio->diff($tempFecha);
     $miFechaFin = (new DateTime($dbDate." ".$dbInicio))->add($diferencia);
-    echo "DbDATE=".$dbDate."<br>";
+    $newDAte = new DateTime('2021-02-25 16:44:00');
+    echo "DbDATE=".gettype($dbDate)."<br>";
     echo "DbInicio=".$dbDate." ".$dbInicio."<br>";
     echo "DbDuracion=".$dbDuracion."<br>";
     echo "DbFin=".$dbFin."<br>";
     echo "iFecha=".date_format($miFecha,'Y-m-d H:i:s')."<br>";
-    echo "dFecha=".date_format($tempFecha,'Y-m-d H:i:s')."<br>";
+    echo "dFecha=".date_format($newDAte,'Y-m-d H:i:s')."<br>";
     echo "fFecha=".date_format($miFechaFin,'Y-m-d H:i:s')."<br>";
     echo "<br>";
   }
