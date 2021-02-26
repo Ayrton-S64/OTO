@@ -46,7 +46,7 @@ function registrarUsuario(){
   let param_celular = $('#txtCelular').val();
   if(param_celular.length != 9){
     alert("numero de telefono deben ser 9 digitos");
-    $()
+    return 0;
   }
   $.ajax({
     type: "POST",
