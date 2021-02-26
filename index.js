@@ -265,6 +265,8 @@ function changeCbo(e){
 }
 
 function lanzarAlerta(mensaje, tipo, objeto){
+  console.log("procesando alertas...");
+  console.log(mensaje);
   switch(tipo){
     default:
       msgAlerta.innerText = mensaje;
