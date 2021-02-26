@@ -38,6 +38,9 @@
         </li>
       </ul>
     </div>
+    <form class="form-inline my-2 my-lg-0">
+          <a class="btn btn-dark" href="logout.php">Cerrar Sesión</a>
+    </form>
   </nav>
   <div class="container-fluid main px-5 py-4">
     <div class="row h-100">
