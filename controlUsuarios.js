@@ -44,6 +44,10 @@ function registrarUsuario(){
   let param_clave = $('#txtClave').val();
   let param_correo = $('#txtCorreo').val();
   let param_celular = $('#txtCelular').val();
+  if(param_celular.length != 9){
+    alert("numero de telefono deben ser 9 digitos");
+    $()
+  }
   $.ajax({
     type: "POST",
     url: "./registrarUsuario.php",
@@ -53,6 +57,7 @@ function registrarUsuario(){
           '&celular='+param_celular,
     success: function (data) {
       objeto = JSON.parse(data);
+      console.log(objeto);
       if(objeto.success == 1){
         var tmpl = '<div class="alert alert-success alert-dismissable">'+
 					'<button class="close" data-dismiss="alert">&times;</button>'+
