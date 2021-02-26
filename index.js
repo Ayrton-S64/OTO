@@ -123,7 +123,7 @@ function enviarTarea(){
           }
         }
         
-        $('#tareasForm').append(tmpl);
+        $('.main').append(tmpl);
 
         setTimeout(function(){
           $('.alert').addClass('on');
@@ -170,7 +170,7 @@ async function eliminarTarea(tareaItem){
 					objeto.mensaje +
 					'</div>';
         }
-        $('#taskManager').append(tmpl);
+        $('.main').append(tmpl);
 
         setTimeout(function(){
           $('.alert').addClass('on');

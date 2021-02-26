@@ -48,12 +48,17 @@ if(pg_num_rows($result)>1){
 }else{
   $mensaje= "No tienes ninguna tarea pendiente, Bien hecho :D";
 }
+if($_SESSION['enviado']){
+  $response = $altiriaSMS->sendSMS($sDestination, $mensaje);
+  echo $sDestination;
+  echo $mensaje;
+  if (!$response){
+    echo "El env�o ha terminado en error";
+  }
+  else{
+    echo $response;
+    $_SESSION['enviado']=TRUE;
+  }
+}
 
-$response = $altiriaSMS->sendSMS($sDestination, $mensaje);
-echo $sDestination;
-echo $mensaje;
-if (!$response)
-  echo "El env�o ha terminado en error";
-else
-  echo $response;
 ?>
