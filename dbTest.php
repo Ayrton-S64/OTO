@@ -14,7 +14,7 @@
     $diferencia = $miFechaInicio->diff($tempFecha);
     $miFechaFin = (new DateTime($dbDate." ".$dbInicio))->add($diferencia);
     echo "DbDATE=".$dbDate."<br>";
-    echo "DbInicio=".gettype($dbInicio)."<br>";
+    echo "DbInicio=".$dbDate." ".$dbInicio."<br>";
     echo "DbDuracion=".$dbDuracion."<br>";
     echo "DbFin=".$dbFin."<br>";
     echo "iFecha=".date_format($miFecha,'Y-m-d H:i:s')."<br>";
