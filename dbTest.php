@@ -18,7 +18,7 @@
     echo "DbInicio=".$dbDate." ".$dbInicio."<br>";
     echo "DbDuracion=".$dbDuracion."<br>";
     echo "DbFin=".$dbFin."<br>";
-    echo "iFecha=".date_format($miFecha,'Y-m-d H:i:s')."<br>";
+    echo "iFecha=".date_format($miFechaInicio,'Y-m-d H:i:s')."<br>";
     echo "dFecha=".date_format($newDAte,'Y-m-d H:i:s')."<br>";
     echo "fFecha=".date_format($miFechaFin,'Y-m-d H:i:s')."<br>";
     echo "<br>";
