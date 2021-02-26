@@ -104,14 +104,15 @@ function enviarTarea(){
                     "&descripcion="+descripcion+
                     "&forzar=1",
               success: function (response) {
-                objeto = JSON.parse(data);
-                if(objeto.success==1){
+                reintento = JSON.parse(data);
+                console.log(reintento);
+                if(reintento.success==1){
                   var tmpl = '<div class="alert alert-success alert-dismissable">'+
                   '<button class="close" data-dismiss="alert">&times;</button>'+
-                  objeto.mensaje +
+                  reintento.mensaje +
                   '</div>';
                   crearComponente(createJSON(nombre,fecha,tiempoInicio,tiempoFin,categoria,descripcion,objeto.total));
-                }else if(objeto.success==0){
+                }else if(reintento.success==0){
                   var tmpl = '<div class="alert alert-danger alert-dismissable">'+
                   '<button class="close" data-dismiss="alert">&times;</button>'+
                   objeto.mensaje +
