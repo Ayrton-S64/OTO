@@ -104,7 +104,7 @@ function enviarTarea(){
                     "&descripcion="+descripcion+
                     "&forzar=1",
               success: function (response) {
-                reintento = JSON.parse(data);
+                reintento = JSON.parse(response);
                 console.log(reintento);
                 if(reintento.success==1){
                   var tmpl = '<div class="alert alert-success alert-dismissable">'+
