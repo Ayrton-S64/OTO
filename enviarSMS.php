@@ -27,12 +27,12 @@ $altiriaSMS->setDebug(true);
 
 //$sDestination = '346xxxxxxxx';
 $con = conectar();
-$result = pg_query('SELECT * FROM usuarios WHERE id_usuario='.$_SESSION['userID'].';');
+$result = pg_query('SELECT * FROM usuarios WHERE id_usuario='.$_SESSION['user_id'].';');
 $fila = pg_fetch_array($result);
 $sDestination = '51'.$fila['telefono'].'';
 //$sDestination = array('346xxxxxxxx','346yyyyyyyy');
 $mensaje = "Tienes las siguientes tareas pendientes:\n";
-echo "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['userID'].";";
+echo "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";";
 $result = pg_query("SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";");
 
 while($fila = pg_fetch_array($result)){
