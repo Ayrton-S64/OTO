@@ -4,7 +4,7 @@
     "messages" => [ 
        [
            "from" => "REMITENTE",
-          "to" => "+51933856134",
+          "to" => "51933856134",
           "text" => "Texto del mensaje a enviar"
        ]
     ]
