@@ -16,7 +16,7 @@ $altiriaSMS = new AltiriaSMS();
 
 $altiriaSMS->setLogin('ayrtonxd.123@gmail.com');
 $altiriaSMS->setPassword('db28c34b');
-$altiriaSMS->setDomainId('CLI_3184');
+//$altiriaSMS->setDomainId('CLI_3184');
 
 $altiriaSMS->setDebug(true);
 
@@ -43,7 +43,7 @@ if(pg_num_rows($result)>1){
         $mensaje.=' '.$fila['fecha'].':';
         $tempFecha = $fila['fecha'];
     }
-    $mensaje .= '   -'.$fila['nombre_tarea']. ' para las '.substr($fila['hora_inicio'],0,5).'%OA';
+    $mensaje .= '   -'.$fila['nombre_tarea']. ' para las '.substr($fila['hora_inicio'],0,5).'  ';
   }
   $mensaje.="para mas detalle entrar a https://oto-task.herokuapp.com/";
 }else{
