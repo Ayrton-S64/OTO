@@ -19,7 +19,7 @@
 
 
   $valido = TRUE;
-  $result = pg_query("SELECT * FROM tareas WHERE id_usuario=".$userID." AND fecha=".$fecha." AND estado=1);");
+  $result = pg_query("SELECT * FROM tareas WHERE id_usuario=".$userID." AND fecha=".$fecha." AND estado=1;");
   while($fila = pg_fetch_array($result)){
     $dbDate = $fila['fecha'];
     $dbInicio = $fila['hora_inicio'];
