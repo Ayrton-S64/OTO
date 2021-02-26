@@ -76,7 +76,7 @@ function registrarUsuario(){
       setTimeout(function(){
 				$('.alert').remove();
         if(objeto.success==1){
-          location.replace('.');
+          location.replace('./login.html');
         } else {
           $('#loginForm').trigger("reset");
         }

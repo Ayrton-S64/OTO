@@ -35,15 +35,19 @@ $sDestination = '51'.$fila['telefono'].'';
 $mensaje = "Tienes las siguientes tareas pendientes:%OA";
 echo "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";";
 $result = pg_query("SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id']." LIMIT 1;");
-$tempFecha = "";
-while($fila = pg_fetch_array($result)){
-   if($fila['fecha']!=$tempFecha){
-      $mensaje.=' '.$fila['fecha'].':';
-      $tempFecha = $fila['fecha'];
-   }
-   $mensaje .= '   -'.$fila['nombre_tarea']. ' para las '.substr($fila['hora_inicio'],0,5).'%OA';
+if(pg_num_rows($result)>1){
+  $tempFecha = "";
+  while($fila = pg_fetch_array($result)){
+    if($fila['fecha']!=$tempFecha){
+        $mensaje.=' '.$fila['fecha'].':';
+        $tempFecha = $fila['fecha'];
+    }
+    $mensaje .= '   -'.$fila['nombre_tarea']. ' para las '.substr($fila['hora_inicio'],0,5).'%OA';
+  }
+  $mensaje.="para mas detalle entrar a https://oto-task.herokuapp.com/";
+}else{
+  $mensaje= "No tienes ninguna tarea pendiente, Bien hecho :D";
 }
-$mensaje.="para mas detalle entrar a https://oto-task.herokuapp.com/";
 
 $response = $altiriaSMS->sendSMS($sDestination, $mensaje);
 echo $sDestination;
