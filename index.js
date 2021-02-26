@@ -60,8 +60,8 @@ function enviarTarea(){
   descripcion = procesarValueTextArea(tAreaDescripcion.value);
   valueAsTimeInicio = timeInicio.valueAsDate;
   valueAsTimeFin = timeFin.valueAsDate;
-  horas =valueAsTimeFin.getUTCHours() - valueAsTimeInicio.getUTCHours();
-  minutos = valueAsTimeFin.getUTCMinutes() - valueAsTimeInicio.getUTCMinutes();
+  horas = valueAsTimeFin.getUTCHours() - valueAsTimeInicio.getUTCHours();
+  minutos = Math.abs(valueAsTimeFin.getUTCMinutes() - valueAsTimeInicio.getUTCMinutes());
   strHoras = (horas>9)?`${horas}`:`0${horas}`;
   strMinutos = (minutos>9)?`${minutos}`:`0${minutos}`;
   txtDuracion = strHoras + ":" + strMinutos;
@@ -208,6 +208,7 @@ function crearComponente(tarea){
   tareasForm.reset();
   eHTML = taskContainer[0]
   let nElem = eHTML.childElementCount;
+  if()
   eHTML.innerHTML += `
   <div class="vieweritem" id="${tarea.idTarea + 1}">
     <div class="taskhead">
