@@ -14,9 +14,19 @@
   if(!$result){
     $resp = array('success'=>0, 'mensaje'=>'Surgió un problema al agregar la tarea');
   } else {
-    $respuesta = pg_query("SELECT * FROM tareas WHERE id_usuario=".$userID.";");
-    $numTareas = pg_num_rows($respuesta);
-    $resp = array('success'=>1, 'mensaje'=>'Se agregó con exito la tarea','total'=>$numTareas);
+    $valido = TRUE;
+    $result = pg_query("SELECT * FROM tareas WHERE id_usuario=".$userID." AND fecha=".$fecha.");");
+    while($fila = pg_fetch_array($result)){
+      $dbDate = $fila['fecha'];
+      $dbInicio = $fila['hora_inicio'];
+      $dbFin = $fila['hora_inicio'] + $fila['duracion'];
+    }
+    if($valido){
+      $respuesta = pg_query("SELECT * FROM tareas WHERE id_usuario=".$userID.";");
+      $numTareas = pg_num_rows($respuesta);
+      $resp = array('success'=>1, 'mensaje'=>'Se agregó con exito la tarea','total'=>$numTareas);
+    }
+    
     pg_close($con);
   }
   echo json_encode($resp);

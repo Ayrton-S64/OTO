@@ -1,5 +1,3 @@
-var prueba = 0;
-
 function logearUsuario(){
   let param_opcion='logear';
   let param_user = $('#txtUsuario').val();
@@ -11,7 +9,6 @@ function logearUsuario(){
           '&clave='+param_clave,
     success: function (data) {
       objeto = JSON.parse(data);
-      prueba = objeto;
       if(objeto.success == 1){
         var tmpl = '<div class="alert alert-success alert-dismissable">'+
 					'<button class="close" data-dismiss="alert">&times;</button>'+
