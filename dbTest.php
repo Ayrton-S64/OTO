@@ -8,13 +8,19 @@
     $dbDate = $fila['fecha'];
     $dbInicio = $fila['hora_inicio'];
     $dbFin = $fila['hora_inicio'] + $fila['duracion'];
-    $miFecha = new DateTime($dbDate);
-    echo "DbDATE=".$dbDate."\n";
-    echo "DbInicio=".$dbInicioc."\n";
-    echo "DbDuracion=".$fila['duracion']."\n";
-    echo "DbFin=".$dbFin."\n";
-    echo "oFecha=".date_format($miFecha,'Y-m-d H:i:s')."\n";
-    echo "\n";
+    $dbDuracion = $fila['duracion'];
+    $miFechaInicio = new DateTime($dbDate." ".$dbInicio);
+    $tempFecha = new DateTime($dbDate." ".$dbDuracion);
+    $diferencia = $miFechaInicio->diff($tempFecha);
+    $miFechaFin = (new DateTime($dbDate." ".$dbInicio))->add($diferencia);
+    echo "DbDATE=".$dbDate."<br>";
+    echo "DbInicio=".$dbInicioc."<br>";
+    echo "DbDuracion=".$dbDuracion."<br>";
+    echo "DbFin=".$dbFin."<br>";
+    echo "iFecha=".date_format($miFecha,'Y-m-d H:i:s')."<br>";
+    echo "dFecha=".date_format($tempFecha,'Y-m-d H:i:s')."<br>";
+    echo "fFecha=".date_format($miFechaFin,'Y-m-d H:i:s')."<br>";
+    echo "<br>";
   }
   echo "testFinalizado";
 ?>
