@@ -35,9 +35,13 @@ $sDestination = '51'.$fila['telefono'].'';
 $mensaje = "Tienes las siguientes tareas pendientes:\n";
 echo "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";";
 $result = pg_query("SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";");
-
+$tempFecha = "";
 while($fila = pg_fetch_array($result)){
-   $mensaje .= '   -'.$fila['nombre_tarea'].'para '.$fila['fecha'].'\n';
+   if($fila['fecha']!=$tempFecha){
+      $mensaje.=' '.$fila['fecha'].':';
+      $tempFecha = $fila['fecha'];
+   }
+   $mensaje .= '   -'.$fila['nombre_tarea'].'\n';
 }
 $mensaje.="para mas detalle entrar a https://oto-task.herokuapp.com/";
 
