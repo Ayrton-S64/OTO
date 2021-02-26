@@ -33,7 +33,7 @@ $result = pg_query('SELECT * FROM usuarios WHERE id_usuario='.$_SESSION['user_id
 $fila = pg_fetch_array($result);
 $sDestination = '51'.$fila['telefono'].'';
 //$sDestination = array('346xxxxxxxx','346yyyyyyyy');
-$mensaje = "Tienes las siguientes tareas pendientes:%OA";
+$mensaje = "Tienes las siguientes tareas pendientes:";
 echo "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";";
 $result = pg_query("SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id']." LIMIT 1;");
 if(pg_num_rows($result)==1){
