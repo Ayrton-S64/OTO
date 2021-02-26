@@ -86,6 +86,10 @@
         <div class=" taskcontainer h-100">
           <?php
             $con = conectar();
+            echo "<h1>Usuario:</h1>";
+            echo "<h1>".$_SESSION['user']."</h1>";
+            echo "<h1>ID:</h1>";
+            echo "<h1>".$_SESSION['user_id']."</h1>";
             $respuesta = pg_query("SELECT * FROM tareas WHERE id_usuario=".$_SESSION['user_id'].";");
             $totalTareas = pg_num_rows($respuesta);
             $query = "SELECT * FROM tareas WHERE estado=1 AND id_usuario=".$_SESSION['user_id'].";";
